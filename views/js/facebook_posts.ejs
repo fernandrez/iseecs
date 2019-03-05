@@ -1,0 +1,27 @@
+<script>
+$(document).ready(function() {
+    var paged = false;
+    //Get updated posts
+    function getPostsByPage(page, baseUrl){
+      $.ajax({
+          url: baseUrl+page,
+          cache: false,
+          timeout: 10000,
+          success: function(data) {
+              //if(baseUrl != '/a/facebook/posts?page=')
+              if(baseUrl != '/a/facebook/posts?page=')
+                $("#facebook-posts").html(data);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+              alert('error ' + textStatus + " " + errorThrown);
+          }
+      });
+    }
+    //getPostsByPage(<%=page%>, '/a/facebook/posts?page=');
+    //Attach listener for page buttons
+    $("#facebook-posts").on('click','.page-button',(event)=>{
+      getPostsByPage($(event.target).data('page'), '/facebook/posts?page=');
+      event.preventDefault();
+    });
+});
+</script>

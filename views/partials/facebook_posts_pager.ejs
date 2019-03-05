@@ -1,0 +1,10 @@
+<ul class="page-buttons pagination pull-right">
+  <% if(page > 1) { %>
+    <% if(page > 2) { %>
+      <li><a class="page-button" data-page="1" href="#"><<</a></li>
+    <% } %>
+    <li><a class="page-button" data-page="<%=(page-1)%>" href="#"><</a></li>
+  <% } %>
+  <li><a href="#"><%=page%></a></li>
+  <li><a class="page-button" data-page="<%=(page+1)%>" href="#">></a></li>
+</ul>

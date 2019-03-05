@@ -1,0 +1,32 @@
+<%- include partials/header.ejs %>
+<%- include partials/navigation.ejs %>
+<% if(locals.post) { %>
+  <h3 style="margin-bottom: 25px; text-align: center;"><%= __('Thank you!') %></h3>
+  <h4 style="margin-bottom: 25px; text-align: center;"><%= __('We will respond as soon as possible!') %></h4>
+<% } else { %>
+  <div class="container text-center">
+      <div class="form-area">
+          <form role="form" method="post">
+          <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;"><%= __('Contact Form') %></h3>
+    				<div class="form-group">
+  						<input type="text" class="form-control" id="name" name="name" placeholder="<%=__('Name') %>" required>
+  					</div>
+  					<div class="form-group">
+  						<input type="text" class="form-control" id="email" name="email" placeholder="<%=__('Email') %>" required>
+  					</div>
+  					<div class="form-group">
+  						<input type="text" class="form-control" id="mobile" name="mobile" placeholder="<%=__('Mobile Number') %>" required>
+  					</div>
+  					<div class="form-group">
+  						<input type="text" class="form-control" id="subject" name="subject" placeholder="<%=__('Subject') %>" required>
+  					</div>
+            <div class="form-group">
+            <textarea style="max-width:300px" class="form-control" type="textarea" id="message" name="message" placeholder="<%=__('Message') %>" maxlength="140" rows="7"></textarea>
+            </div>
+
+          <input type="submit" id="submit" name="submit" class="btn btn-primary pull-right" value="<%= __('Submit Form') %>" />
+          </form>
+      </div>
+  </div>
+<% } %>

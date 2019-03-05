@@ -1,0 +1,8 @@
+<%- include partials/header.ejs %>
+<%- include partials/navigation.ejs %>
+<div class="container">
+  Profile
+  <img src="<%= user.profilePic %>" />
+  <p class="user-name"><%= user.fullName %></p>
+  <a href="/logout"> Logout </>
+</div>

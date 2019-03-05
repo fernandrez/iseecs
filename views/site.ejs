@@ -1,0 +1,22 @@
+<%- include partials/header.ejs %>
+<%- include partials/site-metatags.ejs %>
+<%- include partials/navigation.ejs %>
+<div class="container">
+  <% if(parent && parent.parent) { %>
+  <a href="/site/<%= parent.parent.codigo %>"><%= __(parent.parent.titulo) %></a>
+  <% }
+  if(parent) { %>
+  <h1 class="titulo text-center"><%= __(parent.titulo) %></h1>
+  <h2 class="descripcion text-center"><%- __(parent.descripcion) %></h2>
+  <% } %>
+  <!--<ul class="nav nav-pills nav-stacked">-->
+      <% parent.children.forEach(function(child) { %>
+        <div class="col-sm-4 text-center">
+          <a href="#<%= child.codigo %>" data-toggle="collapse"><h4><%= __(child.titulo) %><% (child.subtitulo!='')?':'+child.subtitulo:'' %></h4></a>
+          <div id="<%= child.codigo %>" class="collapse text-left">
+            <p class="element-description"><%= child.subtitulo?__(child.subtitulo)+' - ':'' %><%- __(child.descripcion) %> <% if(child.has_children){ %><a href="/site/<%= child.codigo %>">Read more...</a> <% } %></p>
+          </div>
+        </div>
+      <% }); %>
+  <!--</ul>-->
+</div>

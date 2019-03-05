@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-iseeci">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/site/home">
+        <img height = "40" src='/img/site/iseeci_small.png' />
+      </a>
+    </div>
+    <ul class="pull-right nav navbar-nav">
+      <li><a href="/lang/es">ES</a></li>
+      <li><a href="#">|</a></li>
+      <li><a href="/lang/en">EN</a></li>
+    </ul>
+    <ul class="pull-right nav navbar-nav">
+      <li><a href="/profile"><img height="20" src="<%= user.profilePic %>" /> <%= user.fullName %></a></li>
+    </ul>
+    <ul class="pull-left nav navbar-nav">
+      <% menu.forEach(function(mi) { %>
+        <% if (mi.children.length > 0) { %>
+          <li class="menu dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= __(mi.titulo) %>
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <% mi.children.forEach(function(mc) { %>
+                  <li class="submenu"><a href="/site/<%= mc.codigo %>"><%= __(mc.titulo) %></a></li>
+                <% });%>
+            </ul>
+          </li>
+        <% } else { %>
+          <li class="menu"><a href="/site/<%= mi.codigo %>"><%= __(mi.titulo) %></a></li>
+        <% } %>
+      <% });%>
+    </ul>
+    <ul class="pull-left nav navbar-nav">
+      <li><a href="/auth/facebook"><img height="20" src="/img/site/fb.png" /></a></li>
+      <li><a href="/auth/google"><img style="margin-top:2px" height="15" src="/img/site/g.png" /></a></li>
+      <li><a href="/auth/twitter"><img height="20" src="/img/site/tw.png" /></a></li>
+    </ul>
+  </div>
+</nav>

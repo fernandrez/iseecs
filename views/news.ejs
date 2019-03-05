@@ -1,0 +1,20 @@
+<%- include partials/header.ejs %>
+<%- include partials/site-metatags.ejs %>
+<%- include partials/navigation.ejs %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div id="facebook-posts">
+        <%- include partials/facebook_posts.ejs %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h2 id="google-news-placeholder"><a target="_blank" href="https://news.google.com/?topic=t"><%= __('Google News') %></a> <span id="google-news-loader"><img src="/img/site/loader.gif"></span></h2>
+      <div style="display:none;" id="google-news">
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/google_news.js"></script>
+<%- include js/facebook_posts.ejs %>

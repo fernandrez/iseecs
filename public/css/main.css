@@ -1,0 +1,108 @@
+@font-face {
+    font-family: EurostileRegular;
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/EurostileRegular.ttf);
+}
+
+@font-face {
+    font-family: Tower;
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/HighTowerText.ttf);
+}
+
+@font-face {
+    font-family: TowerItalic;
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/HighTowerTextItalic.ttf);
+}
+
+@font-face {
+    font-family: Quattrocento;
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/Quattrocento.otf);
+}
+body{
+  font-family: Quattrocento, serif !important;
+  font-size: 14pt;
+}
+/* NavBar */
+nav.navbar-iseeci{
+  font-family: Tower, serif !important;
+}
+a.navbar-brand{
+  padding:5px;
+}
+li.menu, li.submenu {
+  font-size: 15pt;
+}
+div.logo{
+  margin-top:30px;
+}
+/* Elements */
+p.element-description{
+  font-size:15pt;
+}
+/* ContactForm */
+div.form-area{
+  max-width: 400px; margin:auto;
+  padding: 0px 50px 50px;
+  background-color: #f0f0f0;
+}
+/* News */
+div.newspost{
+    margin-bottom:20px;
+    padding:10px;
+    border-radius: 3px;
+    border: 1px #aaa solid;
+    background-color:#f7f7f7;
+    border: 1px #aaa solid;
+    background-color:#f8f8f8;
+}
+div.fbpost {
+}
+div.gpost {
+}
+div.fbpost-pic {
+  mrgin-right
+}
+div.fbpost-text {
+  margin-left:10px;
+}
+div.fbpost h4 {
+  margin:0;
+}
+div.top-pager ul.page-buttons {
+  margin: 15px 0 0 10px;
+}
+div.bottom-pager ul.page-buttons {
+  margin: -10px 0 10px;
+}
+
+/* Login */
+div.login{
+  width:400px;
+  margin: auto;
+}
+ul.login-list{
+  list-style: none;
+}
+ul.login-list li{
+  display: inline;
+}
+
+/* Local */
+.api-trigger{
+  cursor:pointer;
+}
+
+.trigger-wrapper{
+  font-size:0.9em;
+}
+
+.on-off{
+  font-size:0.7em;
+}

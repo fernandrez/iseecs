@@ -1,0 +1,32 @@
+<div class="clearfix">
+  <h2 class="pull-left"><a target="_blank" href="https://www.facebook.com/iseeci"><%= __('Facebook Feed') %></a></h2>
+  <div class="top-pager">
+    <%- include facebook_posts_pager.ejs %>
+  </div>
+</div>
+<div class="newsposts fbposts clearfix">
+<% posts.forEach(function(post) { %>
+  <div class="newspost fbpost  clearfix">
+    <div class="row-fluid clearfix">
+      <div class="pull-left">
+        <h4><a target="_blank" href="<%= post.link %>"><%= post.message %></a></h4>
+      </div>
+      <div class="pull-right">
+        <%= post.updated_time.toDateString() %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="pull-left" style="width:13%">
+        <img height="80" width="80" src="<%= post.picture %>" />
+      </div>
+      <div class="pull-left" style="width:87%">
+        <h4><%= post.name %></h4>
+        <h5><%= post.description %></h5>
+      </div>
+    </div>
+  </div>
+<% }); %>
+  <div class="bottom-pager">
+    <%- include facebook_posts_pager.ejs %>
+  </div>
+</div>

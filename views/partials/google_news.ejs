@@ -1,0 +1,24 @@
+<% j = 0; display=''; %>
+<div class="clearfix">
+  <h2 class="pull-left"><a target="_blank" href="https://news.google.com/?topic=t"><%= __('Google News') %></a></h2>
+  <div class="top-pager">
+    <%- include google_news_pager.ejs %>
+  </div>
+</div>
+<% news.forEach(function(news_){ %>
+  <% if(j == 1){ display='none';} %>
+  <% if(j % 5 == 0) {%>
+    <div class="google-page google-page-<%= (j/5)+1 %>" style="display:<%=display%>">
+  <% } %>
+      <div class="newspost gpost clearfix">
+        <a target="_blank" href="<%=news_.link%>"><%=news_.title %></a>
+        <div class="pull-right"><%=news_.date %></div>
+      </div>
+  <% j++ %>
+  <% if(j % 5 == 0) { %>
+   </div>
+  <% } %>
+<% }); %>
+  <div class="bottom-pager">
+    <%- include google_news_pager.ejs %>
+  </div>
